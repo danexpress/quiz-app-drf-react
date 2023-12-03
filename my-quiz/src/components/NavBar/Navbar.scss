@@ -1,0 +1,59 @@
+$darkPurple: #00106a;
+$lightBlue: #dfe9ff;
+$activeBlue: #4b71ff;
+$white: #ffffff;
+$lightPurple: #989dc5;
+
+// mixins
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+    -webkit-box-shadow:$top $left $blur $color #{$inset};
+    -moz-box-shadow:$top $left $blur $color #{$inset};
+    box-shadow:$top $left $blur $color #{$inset};
+}
+
+
+nav {
+    height: 50px;
+    background: $white;
+    @include box-shadow(0, .5rem, 1.5rem, rgba(0,0,0,.15));
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    
+    ul {
+      margin: 0;
+      list-style: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      li {
+        margin-right: 30px;
+        color: $activeBlue;
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+    }
+    .logo {
+      height: 50px;
+      width: 75px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      margin-right: 30px;
+      background-color: #4b71ff;
+      cursor: pointer;
+    }
+    .arrow-down {
+      width: 0; 
+      height: 0; 
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 15px solid #fff;
+    }
+  }
